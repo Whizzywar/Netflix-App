@@ -1,0 +1,175 @@
+.title-cards {
+  padding: px 0;
+  margin-bottom: px;
+}
+
+.title-cards h2 {
+  margin-bottom: 10px;
+  font-size: 1.8rem;
+  font-weight: 500;
+  color: #fff;
+  padding-left: 20px;
+  letter-spacing: 0px;
+}
+
+.card-list {
+  display: flex;
+  width: 400%;
+  height: 300%;
+  gap: 8px;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+/* Custom scrollbar for webkit browsers */
+.card-list::-webkit-scrollbar {
+  height: 8px;
+}
+
+.card-list::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+}
+
+.card-list::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+  transition: background 0.3s ease;
+}
+
+.card-list::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.card {
+  flex: 0 0 auto;
+  margin: 5px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+}
+
+.card:hover {
+  transform: translateY(-8px) scale(1.02); /* Slight zoom on hover */
+  z-index: 10; /* Bring hovered card to front */
+}
+
+.card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover; /* Ensure images cover the card area */
+  transition: opacity 0.3s ease;
+  border-radius: 5px;
+}
+
+.card:hover img {
+  transform: scale(1.05); /* Slight fade on hover */
+}
+
+.card p {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  right: 10px;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 400;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.card:hover p {
+  opacity: 1; /* Show title on hover */
+}
+
+/* Responsivenes */
+@media (max-width: 768px) {
+  .title-cards h2 {
+    font-size: 1.5rem;
+    padding-left: 15px;
+  }
+
+  .card-list {
+    padding: 10px 15px 20px 15px;
+  }
+
+  .card {
+    width: 240px;
+  }
+
+  .card img {
+    height: 140px;
+  }
+
+  .card p {
+    font-size: 0.85rem;
+    padding: 12px;
+    min-height: 50px;
+  }
+}
+
+@media (max-width: 480px) {
+  .card {
+    width: 200px;
+  }
+
+  .card img {
+    height: 120px;
+  }
+
+  .card p {
+    font-size: 0.8rem;
+    padding: 10px;
+    min-height: 45px;
+  }
+}
+
+/* Focus states for accessibility */
+.card:focus {
+  outline: 2px solid #e50914;
+  outline-offset: 2px;
+}
+
+.card:focus-visible {
+  outline: 2px solid #e50914;
+  outline-offset: 2px;
+}
+
+/* Animation for card entrance */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.card {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.card:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.card:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.card:nth-child(4) {
+  animation-delay: 0.4s;
+}
+.card:nth-child(5) {
+  animation-delay: 0.5s;
+}
+
+* {
+  transition: all 0.3s ease;
+}

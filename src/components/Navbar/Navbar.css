@@ -1,0 +1,165 @@
+.navbar {
+  display: flex;
+  width: 100%;
+  padding: 20px 6px;
+  justify-content: space-between;
+  position: fixed;
+  font-size: 14px;
+  color: #e5e5e5;
+  background-image: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.7) 10px,
+    transparent
+  );
+  z-index: 1;
+}
+
+.navbar-left {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+
+.navbar-left img {
+  width: 90px;
+}
+
+.navbar-left ul {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+}
+
+.navbar-left ul li {
+  cursor: pointer;
+}
+.navbar-right {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.navbar-right .icons {
+  width: 20px;
+  cursor: pointer;
+}
+
+.navbar-right .profile {
+  border-radius: 4px;
+  width: 35px;
+}
+
+.navbar-profile {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  position: relative;
+}
+
+.navbar .dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  width: max-content;
+  background: #191919;
+  padding: 18px 22px;
+  border-radius: 2px;
+  text-decoration: underline;
+  z-index: 1;
+  display: none;
+}
+
+.navbar .dropdown p {
+  font-size: 13px;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.navbar-profile:hover .dropdown {
+  display: block;
+}
+
+.nav-dark {
+  background: #141414;
+}
+
+.mobile-menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  color: #e5e5e5;
+}
+
+@media (max-width: 1200px) {
+  .navbar-left ul {
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .navbar-left ul li {
+    font-size: 0.8125rem;
+  }
+
+  .navbar-right {
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    --navbar-height: 3.5rem;
+    padding: 0 2rem;
+  }
+
+  .navbar-left ul {
+    display: none; /* Hide nav links on smaller screens */
+  }
+
+  .navbar-right p {
+    display: none; /* Hide "Children" text */
+  }
+
+  .mobile-menu-btn {
+    display: block;
+  }
+}
+
+@media (max-width: 576px) {
+  .navbar {
+    padding: 0 1rem;
+  }
+
+  .navbar-left .logo {
+    height: 2rem;
+    min-width: 4.5rem;
+  }
+
+  .navbar-right {
+    gap: 0.75rem;
+  }
+
+  .navbar-right .icons {
+    width: 1rem;
+    height: 1rem;
+  }
+
+  .dropdown {
+    min-width: 10rem;
+    padding: 0.875rem 1rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .navbar-right {
+    gap: 0.5rem;
+  }
+
+  .navbar-right .profile {
+    width: 1.875rem;
+    height: 1.875rem;
+  }
+}
