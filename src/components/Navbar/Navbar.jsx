@@ -38,15 +38,13 @@ const Navbar = () => {
         <ul>
           <li>Home</li>
 
-          <li>TV Shows</li>
+          <li>Shows</li>
 
           <li>Movies</li>
 
-          <li>New & Popular</li>
+          <li>Games</li>
 
-          <li>My List</li>
-
-          <li>Browse by Languages</li>
+          <li>My Netflix</li>
         </ul>
       </div>
 
